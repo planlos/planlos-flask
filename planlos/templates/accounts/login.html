@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block pagenav %}
+{% endblock %}
+
+{% block content %}
+
+{% for msg in get_flashed_messages() %}
+  <p>{{ msg }}</p>
+{% endfor %}
+
+<form method='POST' action=''>
+  {{form.hidden_tag() }}
+  {{form.next }}
+<div>
+  {{form.username.label }}
+  {{form.username }}<br/>
+  
+  {{form.password.label }}
+  {{form.password }}<br/>
+  
+  {{form.remember.label }}
+  {{form.remember }}
+</div>
+{{form.submit}}
+</form>
+{% endblock %}

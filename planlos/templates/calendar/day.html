@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block pagenav %}
+{% endblock %}
+
+{% block content %}
+<p>
+  {{count}}
+</p>
+{% for event in events %}
+<div class="event">
+<h1>{{event.title}}</h1>
+<h2>{{event.short_desc}}</h2>
+<a href="{{event.url_for()}}">mehr...</a>
+</div>
+
+
+{% if current_user.is_authenticated() %}
+<p>
+  Hello {{ current_user.username }}
+  <a href="{{event.url_for()}}/edit">Edit Event</a>
+</p>
+
+{% endif %}
+{% endfor %}
+</p>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block pagenav %}
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated()  %}
+{% include "accounts/userpage.html" %}
+{% else %}
+You're not logged in.
+
+Like to <a href="{{ url_for('accounts.signup') }}">signup</a>?
+
+{% endif %}
+{% endblock %}

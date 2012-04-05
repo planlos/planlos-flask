@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block pagenav %}
+{% endblock %}
+
+{% block content %}
+<h1>Admin</h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+<p>
+    User logged in: {{user.last_login}}
+    </p>
+<table>
+<tr>
+<td>
+{% for field in form %}
+<tr><td>{{field.label}}</td><td>{{field}}</td></tr>
+{% endfor %}
+</table>
+
+<ul>
+  <li>Reset Password  <form method='POST' action='{{url_for('accounts.pw_reset', username=form.username.data)}}'>
+  <input type='hidden' name='next', value='request.url' />
+  <input type='submit' name="submit" value='Reset Password' />
+  </form></li>
+  
+  <li>Aktivieren/deaktivieren</li>
+  <li>Daten ändern</li>
+  <li>Neuen Aktivierungscode</li>
+  <li>Nachricht schicken</li>
+  <li>löschen</li>
+  <li>kopieren</li>
+  <li>alle termine des Users</li>
+</ul>
+
+{% endblock %}

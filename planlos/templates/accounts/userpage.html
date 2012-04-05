@@ -1,0 +1,8 @@
+<h1> Welcome {{user}}</h1>
+
+<h2> Your Events </h2>
+{% for event in user.events() %}
+ <li>{{event.title}}</li>
+{% endfor %}
+
+<h2> Your messages </h2>

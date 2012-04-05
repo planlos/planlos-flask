@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/static/css/planlos.css" type="text/css" media="screen"/>
+<!--  <link rel="stylesheet" type="text/css" href="/static/css/screen.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/dropdown.css">
+-->
+<!--  <link rel="stylesheet" href="/static/css/base.css" type="text/css" media="screen" /> -->
+
+
+  {% block css %}
+  {# for css extensions #}
+  {% endblock css %}
+
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="/static/js/jquery-ui/css/smoothness/jquery-ui.css" type="text/css" media="all" />
+
+  <!-- Javascripts -->
+  <script type="text/javascript" src="/static/js/jquery/jquery.js" ></script>
+  <script type="text/javascript" src="/static/sijax.js"></script>
+
+
+  <script type="text/javascript" src="/static/js/jquery-ui/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-ui/ui/jquery.ui.core.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-ui/ui/jquery.ui.widget.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-ui/ui/jquery.ui.datepicker.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-ui/ui/jquery.ui.autocomplete.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-ui/ui/jquery.ui.button.js"></script>
+  {% block jsscript %}
+  {# for in template extensions #}
+  {% endblock jsscript %}
+
+  <script type="text/javascript">
+    {{ g.sijax.get_js()|safe }}
+  </script>
+
+  <!-- ICON -->
+  <link rel="shortcut icon" href="/static/favicon.ico" />
+
+  <!-- RSS Feeds -->
+  <link rel="alternate" type="application/rss+xml" href="/feeds/termine" />
+  <link rel="alternate" type="application/rss+xml" href="/feeds/aktuelles" />
+  <link rel="alternate" type="application/rss+xml" href="/feeds/heute" />
+
+  <title>Planlos 2.0</title>
+</head>
+<body>
+  <div id="pagenav">
+    <ul>
+      <li><a href="/users/">Users</a></li>
+      <li><a href="/events/">Termine</a></li>
+      <li><a href="/events/add">Termine (add)</a></li>
+      <li><a href="/users/login">Login</a></li>
+      <li><a href="/users/logout">Logout</a></li>
+    {% block pagenav %}
+    {% endblock %}
+    </ul>
+  </div>
+
+<div id="calendars">
+  {{ widget('calendar') }}
+</div>
+  <div id="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>

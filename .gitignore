@@ -1,0 +1,5 @@
+*.pyc
+*~
+*.desktop
+*.desktop.lock
+.pyflymakercc

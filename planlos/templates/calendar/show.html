@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block pagenav %}
+{% endblock %}
+
+{% block content %}
+<p>
+{{ event.title }}
+{{ event.mongo_id }}<br/>
+Tags: {{event.tags }}
+
+{% if current_user.is_authenticated() %}
+
+<p>
+  Hello {{ current_user.username }}
+  <a href="{{event.url_for()}}/edit">Edit Event</a>
+</p>
+
+{% endif %}
+
+</p>
+{% endblock %}

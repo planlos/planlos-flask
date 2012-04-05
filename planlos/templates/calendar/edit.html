@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block jsscript %}
+  <script type="text/javascript" src="/static/appjs/_user_event_form.js" ></script>
+{% endblock %}
+{% block pagenav %}
+{% endblock %}
+
+{% block content %}
+{% from "macros/_forms.html" import render_errors %}
+<form class="userform" method='POST' action=''>
+{% include "calendar/_event_form.html" %}
+</form>
+{% endblock %}

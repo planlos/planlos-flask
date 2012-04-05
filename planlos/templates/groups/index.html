@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block pagenav %}
+{% endblock %}
+
+{% block content %}
+
+<h2>Group Listing</h2>
+<ul>
+{% for group in groups %}
+<li>{{group.name}}: {{ group.members }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

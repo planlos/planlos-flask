@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block pagenav %}
+{% endblock %}
+
+{% block content %}
+{% from "macros/_forms.html" import render_errors %}
+
+<form method='POST' action=''>
+  {{form.hidden_tag() }}
+  {{form.next }}
+<div>
+  {{ render_errors(form.username) }}
+  {{form.username.label }}
+  {{form.username }}<br/>
+  
+  {{ render_errors(form.password) }}
+  {{form.password.label }}
+  {{form.password }}<br/>
+  
+  {{ render_errors(form.password2) }}
+  {{form.password2.label }}
+  {{form.password2 }}<br/>
+
+  {{ render_errors(form.email) }}
+  {{form.email.label }}
+  {{form.email }}
+</div>
+{{form.submit}}
+</form>
+{% endblock %}

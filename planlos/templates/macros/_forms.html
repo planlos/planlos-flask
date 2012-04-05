@@ -1,0 +1,22 @@
+{% macro render_errors(field) %}
+{% if field.errors %}
+    {% for error in field.errors %}
+    <span class="error">{{ error }}</span>
+    {% endfor %}
+{% endif %}
+{% endmacro %}
+
+{% macro render_form_as_table(form) %}
+{{form.hidden_tag() }}
+<table>
+{% for field in form %}
+  {% if field.type[0:6] == 'Hidden' %}
+  <div style="display:none;">{{field}}</div>
+  {% else %}
+  <tr>
+    <td>{{field.label}}</td><td>{{field}}</td><td> {{ render_errors(field) }} </td>
+  </tr>
+  {% endif %}
+{% endfor %}
+</table>
+{% endmacro %}

@@ -1,0 +1,7 @@
+body { background-color: #cecece; }
+span.tag {  background-color: #fefefe; border: solid 1px; padding: 2px 3px 2px 3px;}
+span.removetag {  background-color: #fefefe; border: solid 1px; padding: 2px 3px 2px 3px;}
+div.eventcalendar{ background-color: #cecece; width: 280px;text-align:center;border: solid 1px;border-radius: 15px; margin: 3px 3px 3px 3px;padding: 3px 3px 3px 3px;}
+div.eventcalendar table {background-color: #dedede; width: 280px;}
+div.eventcalendar td {text-align:center}
+div.eventcalendar a {background-color: #aeaeae; color: #fefefe;border-radius: 5px;text-decoration:none;}

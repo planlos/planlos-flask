@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block pagenav %}
+{% endblock %}
+
+{% block content %}
+{% for location in locations %}
+<p>
+<a href="{{ url_for('locations.show', loc_id=location._id ) }}">{{ location.name }}</a>
+</p>
+{% endfor %}
+
+{% endblock %}

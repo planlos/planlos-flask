@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block pagenav %}
+{% endblock %}
+
+{% block content %}
+{% from "macros/_forms.html" import render_errors %}
+<form method='POST' action=''>
+  {{form.hidden_tag() }}
+<div>
+  {{ render_errors(form.name) }}
+  {{form.name.label }}
+  {{form.name }}<br/>
+  
+  {{ render_errors(form.desc) }}
+  {{form.desc.label }}
+  {{form.desc }}<br/>
+  
+  {{ render_errors(form.homepage_url) }}
+  {{form.homepage_url.label }}
+  {{form.homepage_url }}<br/>
+</div>
+{{form.submit}}
+
+
+{% endblock %}

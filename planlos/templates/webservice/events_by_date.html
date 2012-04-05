@@ -1,0 +1,7 @@
+<div class="events_by_date">
+{% for event in events %}
+<p>
+{{event.title}} -- {{event.eventdate.strftime('%H:%M') }}
+</p>
+{% endfor %}
+</div>
