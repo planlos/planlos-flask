@@ -3,6 +3,10 @@
 from . import Document, DocumentExistsException
 from . import db
 
+
+class Group_Exists(DocumentExistsException):
+    pass
+
 class Group (Document):
     __collection__ = 'groups'
     structure = {

@@ -75,7 +75,7 @@ class Document_with_Permissions(Document):
         return [None]
 
 from user import User, User_Exists_Exception
-from group import Group
+from group import Group, Group_Exists
 from group_admin import Group_Admin
 from profile import Profile
 from event import Event

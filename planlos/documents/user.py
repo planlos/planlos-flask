@@ -38,6 +38,7 @@ class User(Document, UserMixin):
         'date_joined': datetime.now(),
         'last_login': datetime.now(),
         'roles': [u'authenticated'],
+        'groups': [],
         }
 
     def check_password(self, password):
