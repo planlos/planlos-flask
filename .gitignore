@@ -3,3 +3,5 @@
 *.desktop
 *.desktop.lock
 .pyflymakercc
+.coverage
+cover/
